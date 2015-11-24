@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chrone" ng-csp>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>chrone.io</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/newtab.css" type="text/css">
+</head>
+<body class="options-page">
+<div class="container-fluid" ng-controller="NewTabController" ng-cloak>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="title"><a href="{{droneUrl}}">{{droneHost}}</a></h1>
+        </div>
+    </div>
+    
+    <div ng-repeat="buildBatch in builds|batch:3">
+        <div class="row">
+            <div class="parentBuild" ng-repeat="parentBuild in buildBatch">
+                <div class="col-xs-12 col-md-4">
+                    <div class="buildinner" ng-class="{ success: parentBuild.status === 'success', failure: parentBuild.status !== 'success' }">
+                        <h3><a href="{{parentBuild.repo.link_url}}">{{parentBuild.repo.full_name}}</a></h3>
+
+                        <div class="row recentBuilds" ng-repeat="childBuild in parentBuild.builds">
+                            <div class="col-xs-12 recentBuild" ng-class="{ recentSuccess: childBuild.status === 'success', recentFailure: childBuild.status !== 'success' }">
+                                <a href="{{childBuild.link_url}}">
+                                    <div class="media">
+                                        <div class="media-left media-middle">
+                                            <img class="img-circle" width="50" height="50" src="{{childBuild.author_avatar}}"/>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">@{{childBuild.author}}</h4>
+                                            <p>{{childBuild.message}}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+<script type="text/javascript" src="/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/js/services.js"></script>
+<script type="text/javascript" src="/js/controllers.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
+
+</body>
+</html>

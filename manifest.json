@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Chrone.io",
+  "short_name": "chrone",
+  "description": "Puts your drone.io builds on your new tab page.",
+  "version": "0.0.1",
+  "background": {
+    "scripts": ["vendor/angular.min.js"]
+  },
+  "options_page": "html/options.html",
+  "chrome_url_overrides": {
+    "newtab": "html/newtab.html"
+  },
+  "permissions": ["storage", "https://drone.phin.co/"],
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "optional_permissions": ["tabs", "https://drone.phin.co/"],
+  "incognito": "split",
+  "minimum_chrome_version" : "22"
+}

@@ -1,0 +1,70 @@
+HTML{
+    height: 100%;
+    min-height: 100%;
+}
+
+BODY{
+    padding: 5%;
+    height: 100%;
+    min-height: 100%;
+    background: radial-gradient(ellipse at center,  #eeeeee 0%,#cccccc 100%);
+}
+
+.title{
+    margin: 0 0 40px 0;
+}
+
+.build{
+    padding: 10px;
+}
+
+.buildinner{
+    background-color: rgba( 0, 0, 0, 0.05 );
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.parentBuild h3{
+    margin: 0 0 20px 0;
+}
+
+.parentBuild h3 a, .parentBuild h3 a:link, .parentBuild h3 a:active, .parentBuild h3 a:visited{
+    color: #444;
+    text-decoration: none;
+}
+
+.parentBuild h3 a:hover{
+    color: #666;
+}
+
+.success h3 a, .success h3 a:link, .success h3 a:active, .success h3 a:visited{
+    color: rgb(60, 115, 63);
+}
+
+.failure h3 a, .failure h3 a:link, .failure h3 a:active, .failure h3 a:visited{
+    color: rgb(136, 56, 51);
+}
+
+.recentBuild{
+    margin-bottom: 10px;
+}
+
+.recentBuild img{
+    margin-right: 10px;
+}
+
+.recentBuild p{
+    font-size: 12px;
+}
+
+.recentBuild a, .recentBuild a:link, .recentBuild a:active, .recentBuild a:visited {
+    color: #444;
+}
+
+.recentSuccess, .recentSuccess a, .recentSuccess a:link {
+    color: rgb(60, 115, 63);
+}
+
+.recentFailure, .recentFailure a, .recentFailure a:link {
+    color: rgb(136, 56, 51);
+}
