@@ -21,7 +21,7 @@
             <div class="parentBuild" ng-repeat="parentBuild in buildBatch">
                 <div class="col-xs-12 col-md-4">
                     <div class="buildinner" ng-class="{ success: parentBuild.status === 'success', failure: parentBuild.status !== 'success' }">
-                        <h3><a href="{{parentBuild.repo.link_url}}">{{parentBuild.repo.full_name}}</a></h3>
+                        <h3><a href="{{parentBuild.buildUrl}}" target="_blank">{{parentBuild.repo.full_name}}</a></h3>
 
                         <div class="row recentBuilds" ng-repeat="childBuild in parentBuild.builds">
                             <div class="col-xs-12 recentBuild" ng-class="{ recentSuccess: childBuild.status === 'success', recentFailure: childBuild.status !== 'success' }">

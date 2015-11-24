@@ -28,7 +28,8 @@
 					var last3Builds = (builds.length >= 3 ) ? builds.slice(0,3) : builds;
 					var mostRecentBuild = ( last3Builds.length > 0 ) ? last3Builds[0] : false;
 					var mostRecentBuildStatus = (mostRecentBuild) ? mostRecentBuild.status : false;
-					return { name: repo.name, owner: repo.owner, repo: repo, builds: last3Builds, status: mostRecentBuildStatus };
+					var buildUrl = (mostRecentBuild) ? $scope.droneUrl + "/" + repo.owner + "/" + repo.name + "/" + mostRecentBuild.number : $scope.droneUrl + "/" + repo.owner + "/" + repo.name;
+					return { name: repo.name, owner: repo.owner, repo: repo, builds: last3Builds, status: mostRecentBuildStatus, buildUrl: buildUrl };
 				}).catch( function( error ){
 					console.error( "Error fetching build for repo:", repo, error );
 					return false;
